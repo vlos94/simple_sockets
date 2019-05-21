@@ -23,8 +23,8 @@ def sock_handle(conn_sock):
     ##Acquire lock, write message, & release lock
     ##Acquisition and release are handled by the with statement
     with lock:
-    sys.stdout.write(message)
-    sys.stdout.flush()
+        sys.stdout.write(message)
+        sys.stdout.flush()
 
 
     conn_sock.close()
