@@ -20,7 +20,7 @@ def sock_handle(conn_sock):
         chunk = conn_sock.recv(256)
     
     message = ''.join(message_chunks)
-    ##Now acquire the lock
+    ##Acquire lock, write message, & release lock
     lock.acquire()
     sys.stdout.write(message)
     sys.stdout.flush()

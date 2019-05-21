@@ -21,10 +21,11 @@ def sock_handle(conn_sock):
     
     message = ''.join(message_chunks)
     ##Acquire lock, write message, & release lock
-    lock.acquire()
+    ##Acquisition and release are handled by the with statement
+    with lock:
     sys.stdout.write(message)
     sys.stdout.flush()
-    lock.release()
+
 
     conn_sock.close()
 
